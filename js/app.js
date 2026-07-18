@@ -247,12 +247,224 @@ var App = (function() {
     initParticles();
   }
 
+  // ===== CIVIC VALUES MODULES =====
+  function startCivicMode(mode) {
+    currentMode = mode;
+    currentIndex = 0;
+    score = 0;
+    answered = false;
+    
+    if (mode === 'civicValues' || mode === 'scenarios') {
+      go('content');
+      updateCivicContent();
+    } else if (mode === 'civicQuiz') {
+      go('quiz');
+      showCivicQuestion();
+    } else if (mode === 'memory') {
+      go('memory');
+      initMemoryGame();
+    }
+  }
+
+  function updateCivicContent() {
+    var data = currentMode === 'civicValues' ? Data.civicValues : Data.scenarios;
+    if (!data || !data.length) return;
+    var item = data[currentIndex];
+    var total = data.length;
+    var pct = ((currentIndex + 1) / total * 100);
+    
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('pageIndicator').textContent = (currentIndex + 1) + '/' + total;
+    document.getElementById('prevBtn').style.display = currentIndex === 0 ? 'none' : 'block';
+    document.getElementById('nextBtn').textContent = currentIndex === total - 1 ? '✓ Terminar' : 'Siguiente →';
+    
+    if (currentMode === 'civicValues') {
+      document.getElementById('contentTitle').textContent = '⚖️ Valores Cívicos';
+    } else {
+      document.getElementById('contentTitle').textContent = '🎭 ' + item.title;
+    }
+    
+    var html = '<div class="era">' +
+      '<div class="era-date">' + (currentMode === 'civicValues' ? item.icon + ' ' + item.title : item.icon + ' Situación') + '</div>' +
+      '<p>' + (currentMode === 'civicValues' ? item.description : item.situation) + '</p>' +
+      '</div>' +
+      '<div class="highlight">' +
+      '<div class="highlight-title">🤔 ' + (currentMode === 'civicValues' ? 'Situación' : '¿Qué haces?') + '</div>';
+    
+    if (currentMode === 'civicValues') {
+      html += '<p>' + item.scenario + '</p>';
+    }
+    
+    html += '<div class="quiz-options" style="margin-top:12px">';
+    
+    var options = currentMode === 'civicValues' ? item.options : item.choices;
+    options.forEach(function(opt, i) {
+      html += '<button class="quiz-opt civic-opt" data-i="' + i + '">' + (opt.text || opt) + '</button>';
+    });
+    
+    html += '</div>' +
+      '<div class="quiz-feedback" id="civicFeedback"></div>' +
+      '</div>';
+    
+    document.getElementById('contentBody').innerHTML = html;
+    
+    document.querySelectorAll('.civic-opt').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (answered) return;
+        answered = true;
+        var chosen = parseInt(btn.dataset.i);
+        var correctIdx = options.findIndex(function(o) { return o.correct; });
+        
+        document.querySelectorAll('.civic-opt').forEach(function(b, i) {
+          b.classList.add('disabled');
+          if (options[i].correct) b.classList.add('correct');
+        });
+        
+        var fb = document.getElementById('civicFeedback');
+        if (options[chosen].correct) {
+          score += options[chosen].points || 1;
+          btn.classList.add('correct');
+          fb.className = 'quiz-feedback show correct';
+        } else {
+          score += options[chosen].points || 0;
+          btn.classList.add('wrong');
+          fb.className = 'quiz-feedback show wrong';
+        }
+        var feedbackText = options[chosen].feedback || item.lesson;
+        if (currentMode === 'scenarios') {
+          feedbackText = '<strong>Puntos: ' + (options[chosen].points > 0 ? '+' : '') + options[chosen].points + '</strong><br>' + item.lesson;
+        }
+        fb.innerHTML = feedbackText;
+        fb.style.display = 'block';
+      });
+    });
+  }
+
+  function showCivicQuestion() {
+    var q = Data.civicQuiz[currentIndex];
+    var total = Data.civicQuiz.length;
+    
+    document.getElementById('quizTitle').textContent = '⚖️ Quiz de Valores Cívicos';
+    document.getElementById('quizScore').textContent = score + '/' + total;
+    document.getElementById('quizQuestion').innerHTML = '<h3>Pregunta ' + (currentIndex + 1) + '/' + total + '</h3><p>' + q.q + '</p>';
+    document.getElementById('quizFeedback').className = 'quiz-feedback';
+    document.getElementById('quizFeedback').style.display = 'none';
+    document.getElementById('quizNext').style.display = 'none';
+    answered = false;
+    
+    var optsHtml = q.options.map(function(opt, i) {
+      return '<button class="quiz-opt" data-i="' + i + '">' + opt + '</button>';
+    }).join('');
+    
+    document.getElementById('quizOptions').innerHTML = optsHtml;
+    
+    document.querySelectorAll('.quiz-opt').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        if (answered) return;
+        answered = true;
+        var chosen = parseInt(btn.dataset.i);
+        var correct = q.correct;
+        
+        document.querySelectorAll('.quiz-opt').forEach(function(b, i) {
+          b.classList.add('disabled');
+          if (i === correct) b.classList.add('correct');
+        });
+        
+        var fb = document.getElementById('quizFeedback');
+        if (chosen === correct) {
+          score++;
+          btn.classList.add('correct');
+          fb.className = 'quiz-feedback show correct';
+          fb.innerHTML = '✅ ¡Correcto! ' + q.explanation;
+        } else {
+          btn.classList.add('wrong');
+          fb.className = 'quiz-feedback show wrong';
+          fb.innerHTML = '❌ Incorrecto. ' + q.explanation;
+        }
+        
+        document.getElementById('quizScore').textContent = score + '/' + Data.civicQuiz.length;
+        document.getElementById('quizNext').style.display = 'block';
+        document.getElementById('quizNext').textContent = currentIndex < Data.civicQuiz.length - 1 ? 'Siguiente →' : 'Ver Resultado';
+      });
+    });
+  }
+
+  function initMemoryGame() {
+    var values = ['Respeto', 'Honestidad', 'Solidaridad', 'Justicia', 'Tolerancia', 'Responsabilidad'];
+    var icons = ['⚖️', '✋', '🤲', '⚖️', '🌍', '🤝'];
+    var pairs = [];
+    
+    values.forEach(function(v, i) {
+      pairs.push({ id: i*2, value: v, icon: icons[i] });
+      pairs.push({ id: i*2+1, value: v, icon: icons[i] });
+    });
+    
+    // Shuffle
+    for (var i = pairs.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = pairs[i];
+      pairs[i] = pairs[j];
+      pairs[j] = temp;
+    }
+    
+    var html = '<div class="memory-grid">';
+    pairs.forEach(function(p) {
+      html += '<div class="memory-card" data-id="' + p.id + '" data-value="' + p.value + '">' +
+        '<div class="memory-front">?</div>' +
+        '<div class="memory-back">' + p.icon + '<br>' + p.value + '</div>' +
+      '</div>';
+    });
+    html += '</div>';
+    
+    document.getElementById('memoryContent').innerHTML = html;
+    
+    var flipped = [];
+    var matched = 0;
+    var memoryScore = 0;
+    
+    document.querySelectorAll('.memory-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        if (card.classList.contains('flipped') || card.classList.contains('matched')) return;
+        if (flipped.length >= 2) return;
+        
+        card.classList.add('flipped');
+        flipped.push(card);
+        
+        if (flipped.length === 2) {
+          memoryScore++;
+          document.getElementById('memoryScore').textContent = memoryScore + ' intentos';
+          
+          if (flipped[0].dataset.value === flipped[1].dataset.value) {
+            flipped[0].classList.add('matched');
+            flipped[1].classList.add('matched');
+            matched += 2;
+            flipped = [];
+            
+            if (matched === pairs.length) {
+              setTimeout(function() {
+                alert('¡Felicidades! Encontraste todos los valores cívicos en ' + memoryScore + ' intentos');
+              }, 500);
+            }
+          } else {
+            setTimeout(function() {
+              flipped[0].classList.remove('flipped');
+              flipped[1].classList.remove('flipped');
+              flipped = [];
+            }, 1000);
+          }
+        }
+      });
+    });
+  }
+
+
   return {
     go: go,
     startMode: startMode,
     next: next,
     prev: prev,
     nextQuestion: nextQuestion,
+    startCivicMode: startCivicMode,
     init: init
   };
 })();

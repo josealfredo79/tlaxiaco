@@ -222,3 +222,217 @@ var Data = {
     }
   ]
 };
+
+// ===== NUEVOS MÓDULOS =====
+
+Data.civicValues = [
+  {
+    title: "Respeto a la Autoridad",
+    icon: "⚖️",
+    description: "En Tlaxiaco, el respeto a la autoridad comenzó con los ancianos mixtecos que gobernaban sabiamente. Hoy, ese mismo respeto se refleja en el cumplimiento de las leyes y el respeto a nuestros representantes.",
+    scenario: "Tu vecino quiere construir una barda que invade la banqueta pública. ¿Qué haces?",
+    options: [
+      { text: "Lo dejo, no es mi problema", correct: false, feedback: "Incorrecto. La banqueta es de todos. El respeto a la comunidad significa defender el espacio público." },
+      { text: "Le aviso al inspector municipal", correct: true, feedback: "¡Correcto! Reportar situaciones irregulares es parte del respeto a la ley y la comunidad." },
+      { text: "Le grito y me enojo", correct: false, feedback: "Incorrecto. El respeto implica dialogar, no confrontar." }
+    ]
+  },
+  {
+    title: "Participación Ciudadana",
+    icon: "🗳️",
+    description: "En 1814, los tlaxiaqueños se organizaron para defender su tierra. Hoy, participar en asambleas comunitarias, votar y ser parte del consejo de vigilancia es nuestro deber cívico.",
+    scenario: "Hay una asamblea del consejo de vigilancia para decidir sobre una nueva obra pública. ¿Qué haces?",
+    options: [
+      { text: "No voy, no me importa", correct: false, feedback: "Incorrecto. La participación ciudadana es un derecho y un deber. Las decisiones se toman entre todos." },
+      { text: "Voy y opino con respeto", correct: true, feedback: "¡Correcto! Participar y expresar tu opinión fortalece la democracia local." },
+      { text: "Voy pero solo a quejarme", correct: false, feedback: "Incorrecto. Participar no es solo quejarse, sino proponer soluciones constructivas." }
+    ]
+  },
+  {
+    title: "Responsabilidad Social",
+    icon: "🤝",
+    description: "Los héroes de Tlaxiaco asumieron la responsabilidad de defender su comunidad. Hoy, esa responsabilidad se refleja en cuidar el medio ambiente, respetar el patrimonio y ayudar a nuestros vecinos.",
+    scenario: "Encuentras basura en el parque del pueblo. ¿Qué haces?",
+    options: [
+      { text: "La dejo ahí, alguien más la recogerá", correct: false, feedback: "Incorrecto. La responsabilidad social es cuidar nuestro espacio común." },
+      { text: "La recojo y la separo para reciclar", correct: true, feedback: "¡Correcto! Cuidar el medio ambiente es responsabilidad de todos." },
+      { text: "La quemo para deshacerme de ella", correct: false, feedback: "Incorrecto. Quemar basura contamina el aire y daña la salud." }
+    ]
+  },
+  {
+    title: "Honestidad",
+    icon: "✋",
+    description: "La honestidad fue clave en la lucha de los insurgentes. En Tlaxiaco, ser honesto es ser digno de confianza, como lo fueron María Nava de Catalán y los héroes del Cerro Encantado.",
+    scenario: "Encuentras una billetera con dinero en el mercado. ¿Qué haces?",
+    options: [
+      { text: "Me la quedo, quién la perdió", correct: false, feedback: "Incorrecto. La honestidad es un valor fundamental que define nuestro carácter." },
+      { text: "La entrego a la policía municipal", correct: true, feedback: "¡Correcto! Ser honesto es hacer lo correcto aunque nadie nos vea." },
+      { text: "La abro para ver cuánto tiene", correct: false, feedback: "Incorrecto. Eso es falta de honestidad y respeto a la propiedad ajena." }
+    ]
+  },
+  {
+    title: "Amor a la Patria",
+    icon: "🇲🇽",
+    description: "Morelos pasó por Tlaxiaco en su camino a Acapulco, exhortando a los tlaxiaqueños a luchar por México. Amar la patria es conocer nuestra historia y trabajar por el bienestar de todos.",
+    scenario: "Es el Día de la Independencia. ¿Cómo celebras?",
+    options: [
+      { text: "No me importa, es solo un día feriado", correct: false, feedback: "Incorrecto. Celebrar la independencia es honrar a quienes lucharon por nuestra libertad." },
+      { text: "Participo en los actos cívicos y conozco la historia", correct: true, feedback: "¡Correcto! Amar la patria es conocer y celebrar nuestra historia." },
+      { text: "Solo me importa el fuego artificial", correct: false, feedback: "Incorrecto. Las fiestas patrióticas van más allá del espectáculo." }
+    ]
+  },
+  {
+    title: "Tolerancia",
+    icon: "🌍",
+    description: "Tlaxiaco es un crisol de culturas: mixtecos, nahuas, españoles y más. La tolerancia es respetar las diferencias y convivir en armonía, como lo han hecho los pueblos de la Mixteca por siglos.",
+    scenario: "Un compañero de escuela tiene costumbres diferentes a las tuyas. ¿Qué haces?",
+    options: [
+      { text: "Me burlo de sus costumbres", correct: false, feedback: "Incorrecto. Burlarse destruye la convivencia y fomenta la discriminación." },
+      { text: "Lo respeto y aprendo de su cultura", correct: true, feedback: "¡Correcto! La tolerancia es enriquecerse con las diferencias." },
+      { text: "Lo evito porque es diferente", correct: false, feedback: "Incorrecto. Evitar a los diferentes es discriminación, no tolerancia." }
+    ]
+  },
+  {
+    title: "Justicia Social",
+    icon: "⚖️",
+    description: "Los revolucionarios de Tlaxiaco lucharon por la justicia social: tierra para los campesinos y derechos para los trabajadores. La justicia es tratar a todos de manera equitativa.",
+    scenario: "Un compañero de trabajo gana más que tú por hacer el mismo trabajo. ¿Qué haces?",
+    options: [
+      { text: "No hago nada, es normal", correct: false, feedback: "Incorrecto. La justicia social busca la equidad. Hablar de discriminación salarial es un derecho." },
+      { text: "Hablo con mi jefe para que revise la situación", correct: true, feedback: "¡Correcto! Exigir justicia salarial es un acto de responsabilidad cívica." },
+      { text: "Hago el mínimo para no ayudar", correct: false, feedback: "Incorrecto. Eso no resuelve el problema y afecta tu desempeño." }
+    ]
+  },
+  {
+    title: "Solidaridad",
+    icon: "🤲",
+    description: "Cuando Porfirio Díaz llegó herido a Tlaxiaco, los tlaxiaqueños lo acogieron sin preguntar. La solidaridad es ayudar al prójimo sin esperar nada a cambio.",
+    scenario: "Tu vecino mayor necesita ayuda para cargar sus mandados. ¿Qué haces?",
+    options: [
+      { text: "No tengo tiempo, que se las arregle solo", correct: false, feedback: "Incorrecto. La solidaridad es ayudar a quien lo necesita, especialmente a nuestros mayores." },
+      { text: "Le ayudo gustosamente con sus mandados", correct: true, feedback: "¡Correcto! La solidaridad fortalece los lazos comunitarios." },
+      { text: "Le digo que contrate a alguien", correct: false, feedback: "Incorrecto. La solidaridad no es contratar, es dar de nosotros mismos." }
+    ]
+  }
+];
+
+Data.civicQuiz = [
+  {
+    q: "¿Qué es la participación ciudadana?",
+    options: ["Ir a ver fuegos artificiales", "Opinar y decidir en asambleas comunitarias", "Quejarse en redes sociales", "No hacer nada"],
+    correct: 1,
+    explanation: "La participación ciudadana es opiniary decidir en asambleas, votar y ser parte de las decisiones que afectan a nuestra comunidad."
+  },
+  {
+    q: "¿Qué hicieron los tlaxiaqueños en la Batalla del Cerro Encantado?",
+    options: ["Huyeron", "Se rindieron", "Se organizaron y lucharon", "Esperaron ayuda de otros"],
+    correct: 2,
+    explanation: "Los insurgentes se organizaron sin armas ni artillería y lograron derrotar al ejército realista."
+  },
+  {
+    q: "¿Qué valor representó María Nava de Catalán?",
+    options: ["Cobardía", "Valentía y sacrificio", "Indiferencia", "Egoísmo"],
+    correct: 1,
+    explanation: "María Nava ofreció a sus hijos a la causa insurgente, demostrando valentía y sacrificio por la patria."
+  },
+  {
+    q: "¿Cuál es un acto de responsabilidad social?",
+    options: ["Tirar basura en el río", "Cuidar el medio ambiente", "Ignorar los problemas", "No participar en la comunidad"],
+    correct: 1,
+    explanation: "La responsabilidad social implica cuidar nuestro entorno y trabajar por el bienestar común."
+  },
+  {
+    q: "¿Qué significa 'tolerancia'?",
+    options: ["No respetar a los diferentes", "Respetar y convivir con las diferencias", "Imponer nuestras ideas", "Evitar a quien no piensa como nosotros"],
+    correct: 1,
+    explanation: "La tolerancia es respetar las diferencias y convivir en armonía con todos."
+  },
+  {
+    q: "¿Por qué es importante la honestidad?",
+    options: ["Para que no nos multen", "Porque es correcto y construye confianza", "Para ser popular", "No es importante"],
+    correct: 1,
+    explanation: "La honestidad construye confianza y define nuestro carácter como personas y como comunidad."
+  },
+  {
+    q: "¿Qué hizo Morelos en Tlaxiaco?",
+    options: ["Compró terrenos", "Exhortó a los habitantes a luchar por la Independencia", "Construyó una iglesia", "Se quedó a vivir"],
+    correct: 1,
+    explanation: "Morelos pasó por Tlaxiaco en 1813 exhortando a los tlaxiaqueños a incorporarse a los ideales insurgentes."
+  },
+  {
+    q: "¿Qué es la justicia social?",
+    options: ["Dar todo a unos pocos", "Tratar a todos de manera equitativa", "Ignorar la pobreza", "Solo ayudar a familiares"],
+    correct: 1,
+    explanation: "La justicia social busca que todas las personas tengan las mismas oportunidades y derechos."
+  },
+  {
+    q: "¿Cómo se demuestra el amor a la patria?",
+    options: ["No haciendo nada", "Conociendo la historia y participando en la comunidad", "Solo en fiestas patrióticas", "Critican todo"],
+    correct: 1,
+    explanation: "Amar la patria es conocer nuestra historia, respetar nuestros símbolos y trabajar por el bienestar de México."
+  },
+  {
+    q: "¿Qué es la solidaridad?",
+    options: ["Solo ayudar a quien nos conviene", "Ayudar al prójimo sin esperar nada a cambio", "Pedir ayuda todo el tiempo", "No ayudar a nadie"],
+    correct: 1,
+    explanation: "La solidaridad es dar de nosotros mismos para ayudar a quien lo necesita, como los tlaxiaqueños con Porfirio Díaz."
+  }
+];
+
+Data.scenarios = [
+  {
+    title: "El Mercado y la Honestidad",
+    icon: "🏪",
+    situation: "Estás en el mercado de Tlaxiaco vendiendo frutas. Un cliente te da un billete de $500 por unas manzanas que valen $50, y te pide cambio de $450. Te das cuenta de que el billete es falso.",
+    choices: [
+      { text: "Le devuelvo el billete y le digo que es falso", correct: true, points: 10 },
+      { text: "Acepto el billete y no digo nada", correct: false, points: -5 },
+      { text: "Le doy el cambio pero le quito más frutas", correct: false, points: -3 }
+    ],
+    lesson: "La honestidad es un pilar de la convivencia. En el mercado de Tlaxiaco, la confianza entre vendedor y comprador es lo que mantiene vivo el comercio tradicional."
+  },
+  {
+    title: "La Asamblea del Pueblo",
+    icon: "🏛️",
+    situation: "Hay una asamblea para decidir si se construye una nueva escuela o se repara el mercado. Tú tienes una opinión pero no quieres hablar en público.",
+    choices: [
+      { text: "No voy a la asamblea", correct: false, points: -5 },
+      { text: "Voy y expreso mi opinión con respeto", correct: true, points: 10 },
+      { text: "Voy pero me quedo callado", correct: false, points: 0 }
+    ],
+    lesson: "La participación ciudadana es un derecho y un deber. En Tlaxiaco, las decisiones importantes se toman en asamblea, donde cada voz cuenta."
+  },
+  {
+    title: "El Patrimonio Cultural",
+    icon: "⛪",
+    situation: "Ves que unos jóvenes están rayando las paredes del antiguo convento dominico. El 'Modillón dominico' está cerca.",
+    choices: [
+      { text: "Les digo que paren porque es patrimonio histórico", correct: true, points: 10 },
+      { text: "No hago nada, no es mi problema", correct: false, points: -5 },
+      { text: "Me uno a rayar porque es divertido", correct: false, points: -10 }
+    ],
+    lesson: "El convento dominico del siglo XVI es un tesoro histórico. Cuidar nuestro patrimonio es responsabilidad de todos los tlaxiaqueños."
+  },
+  {
+    title: "La Emergencia Comunitaria",
+    icon: "🚨",
+    situation: "Hay una inundación en un barrio de Tlaxiaco. Muchas familias necesitan ayuda. Tú tienes comida y ropa de sobra.",
+    choices: [
+      { text: "Guardo todo para mí por si acaso", correct: false, points: -5 },
+      { text: "Entrego lo que puedo para ayudar", correct: true, points: 10 },
+      { text: "Espero a que ayude el gobierno", correct: false, points: 0 }
+    ],
+    lesson: "La solidaridad es lo que nos hace fuertes. En las emergencias, la ayuda entre vecinos es más rápida que cualquier institución."
+  },
+  {
+    title: "El Voto Consciente",
+    icon: "🗳️",
+    situation: "Son elecciones municipales. Un candidato te ofrece $500 por tu voto. El otro candidato no ofrece nada pero tiene un buen proyecto para el pueblo.",
+    choices: [
+      { text: "Acepto los $500 y voto por el que me dio", correct: false, points: -10 },
+      { text: "Voto por el que tiene el mejor proyecto", correct: true, points: 10 },
+      { text: "No voto porque todos son iguales", correct: false, points: -5 }
+    ],
+    lesson: "El voto no se vende. Votar por el mejor proyecto es un acto de responsabilidad cívica que beneficia a toda la comunidad."
+  }
+];
