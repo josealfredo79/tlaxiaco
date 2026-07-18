@@ -47,7 +47,20 @@ var Timeline = (function() {
   
   function next() {
     if (current < data.length - 1) { current++; render(); }
-    else App.go('result-timeline');
+    else {
+      Progreso.completeModule('timeline', 15);
+      document.getElementById('timelineContent').innerHTML = 
+        '<div class="result-screen">' +
+          '<div class="result-icon">📜</div>' +
+          '<h2 style="font-family:Cinzel;color:#D4A017">¡Línea del Tiempo Completada!</h2>' +
+          '<p style="color:#C25B28;margin:8px 0">Recorriste la historia de Tlaxiaco desde 400 a.C.</p>' +
+          '<div class="result-stats">' +
+            '<div class="stat-box"><div class="stat-val">6</div><div class="stat-label">Épocas</div></div>' +
+            '<div class="stat-box"><div class="stat-val">+15</div><div class="stat-label">Monedas</div></div>' +
+          '</div>' +
+          '<button class="btn" onclick="App.go(\'menu\')">Volver al Menú</button>' +
+        '</div>';
+    }
   }
   
   function prev() {

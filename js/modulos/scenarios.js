@@ -78,12 +78,13 @@ var Scenarios = (function() {
   function next() {
     if (current < data.length - 1) { current++; answered = false; render(); }
     else {
+      Progreso.completeModule('scenarios', totalPoints);
       var icon = totalPoints >= 30 ? '🌟' : totalPoints >= 15 ? '👍' : '📚';
       document.getElementById('scenariosContent').innerHTML = 
         '<div class="result-screen">' +
           '<div class="result-icon">' + icon + '</div>' +
-          '<h2>¡Escenarios Completados!</h2>' +
-          '<p>Obtuviste ' + totalPoints + ' puntos</p>' +
+          '<h2 style="font-family:Cinzel;color:#D4A017">¡Escenarios Completados!</h2>' +
+          '<p style="color:#C25B28;margin:8px 0">Obtuviste ' + totalPoints + ' puntos</p>' +
           '<button class="btn" onclick="App.go(\'menu\')">Volver al Menú</button>' +
         '</div>';
     }

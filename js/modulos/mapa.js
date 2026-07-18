@@ -11,30 +11,30 @@ var Mapa = (function() {
   function init() { render(); }
 
   function render() {
-    var html = '<div class="c-hdr">' +
-      '<button class="back" onclick="App.go(\'menu\')">←</button>' +
+    var html = '<div class="content-header">' +
+      '<button class="back-btn" onclick="App.go(\'menu\')">←</button>' +
       '<h2>🗺️ Mapa de Tlaxiaco</h2></div>' +
-      '<div class="c-body" style="padding:0">';
+      '<div class="content-body">';
     
     places.forEach(function(p, i) {
       html += '<div class="era-card" style="cursor:pointer" onclick="Mapa.showDetail(' + i + ')">' +
-        '<div class="e-date">' + p.icon + ' ' + p.year + '</div>' +
+        '<div class="era-date">' + p.icon + ' ' + p.year + '</div>' +
         '<h3>' + p.name + '</h3>' +
-        '<p style="font-size:.75em;color:#C25B28">' + p.coords + '</p></div>';
+        '<p style="font-size:.75em;color:#D4692E">' + p.coords + '</p></div>';
     });
     
-    html += '</div><div class="c-nav"><button class="btn btn-outline btn-sm" onclick="App.go(\'menu\')">← Menú</button></div>';
+    html += '</div><div class="content-nav"><button class="btn btn-outline btn-sm" onclick="App.go(\'menu\')">← Menú</button></div>';
     document.getElementById('mapaContent').innerHTML = html;
   }
 
   function showDetail(i) {
     var p = places[i];
     document.getElementById('mapaContent').innerHTML =
-      '<div class="c-hdr"><button class="back" onclick="Mapa.init()">←</button><h2>' + p.icon + ' ' + p.name + '</h2></div>' +
+      '<div class="content-header"><button class="back-btn" onclick="Mapa.init()">←</button><h2>' + p.icon + ' ' + p.name + '</h2></div>' +
       '<div class="glyph-display"><div class="glyph-big">' + p.icon + '</div>' +
       '<div class="glyph-name">' + p.name + '</div><div class="glyph-meaning">' + p.year + ' • ' + p.coords + '</div></div>' +
-      '<div class="c-body"><div class="era-card"><p>' + p.desc + '</p></div></div>' +
-      '<div class="c-nav"><button class="btn btn-outline btn-sm" onclick="Mapa.init()">← Lista</button></div>';
+      '<div class="content-body"><div class="era-card"><p>' + p.desc + '</p></div></div>' +
+      '<div class="content-nav"><button class="btn btn-outline btn-sm" onclick="Mapa.init()">← Lista</button></div>';
   }
 
   return { init: init, showDetail: showDetail };

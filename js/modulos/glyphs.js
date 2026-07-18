@@ -50,7 +50,10 @@ var Glyphs = (function() {
   
   function next() {
     if (current < data.length - 1) { current++; render(); }
-    else App.go('menu');
+    else {
+      Progreso.completeModule('glyphs', 15);
+      App.go('menu');
+    }
   }
   
   function prev() {

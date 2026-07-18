@@ -67,12 +67,17 @@ var Memory = (function() {
             flipped = [];
             
             if (matched === cards.length) {
+              Progreso.completeModule('memory', 20);
               setTimeout(function() {
                 document.getElementById('memoryContent').innerHTML = 
                   '<div class="result-screen">' +
                     '<div class="result-icon">🌟</div>' +
-                    '<h2>¡Felicidades!</h2>' +
-                    '<p>Encontraste todos los valores en ' + attempts + ' intentos</p>' +
+                    '<h2 style="font-family:Cinzel;color:#D4A017">¡Felicidades!</h2>' +
+                    '<p style="color:#C25B28;margin:8px 0">Encontraste todos los valores en ' + attempts + ' intentos</p>' +
+                    '<div class="result-stats">' +
+                      '<div class="stat-box"><div class="stat-val">' + attempts + '</div><div class="stat-label">Intentos</div></div>' +
+                      '<div class="stat-box"><div class="stat-val">+20</div><div class="stat-label">Monedas</div></div>' +
+                    '</div>' +
                     '<button class="btn" onclick="App.go(\'menu\')">Volver al Menú</button>' +
                   '</div>';
               }, 500);

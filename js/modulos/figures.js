@@ -49,7 +49,10 @@ var Figures = (function() {
   
   function next() {
     if (current < data.length - 1) { current++; render(); }
-    else App.go('menu');
+    else {
+      Progreso.completeModule('figures', 15);
+      App.go('menu');
+    }
   }
   
   function prev() {

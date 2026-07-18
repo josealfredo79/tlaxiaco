@@ -22,7 +22,6 @@ var Progreso = (function() {
     p.completed[name] = { date: new Date().toISOString(), points: points };
     p.coins += points;
     p.xp += points;
-    // Level up every 50 xp
     if (p.xp >= p.level * 50) { p.level++; }
     checkBadges(p);
     save(p);
@@ -64,12 +63,12 @@ var Progreso = (function() {
   function showProfile() {
     var p = get();
     var stats = getStats();
-    var html = '<div class="c-hdr"><button class="back" onclick="App.go(\'menu\')">←</button>' +
+    var html = '<div class="content-header"><button class="back-btn" onclick="App.go(\'menu\')">←</button>' +
       '<h2>👤 Mi Perfil</h2></div>' +
       '<div class="glyph-display"><div class="glyph-big">🏺</div>' +
       '<div class="glyph-name">Explorador Nivel ' + stats.level + '</div>' +
       '<div class="glyph-meaning">' + stats.coins + ' monedas • ' + stats.xp + ' XP</div></div>' +
-      '<div class="c-body"><div class="era-card"><h3>📊 Progreso</h3>' +
+      '<div class="content-body"><div class="era-card"><h3>📊 Progreso</h3>' +
       '<p>Módulos completados: ' + stats.modules + '/12</p>' +
       '<p>Insignias: ' + stats.badges + '/' + stats.totalBadges + '</p></div>';
 
@@ -86,7 +85,6 @@ var Progreso = (function() {
   }
 
   function sync() {
-    // For future cloud sync
     var p = get();
     return JSON.stringify(p);
   }

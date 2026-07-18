@@ -86,7 +86,10 @@ var Civic = (function() {
   
   function next() {
     if (current < data.length - 1) { current++; answered = false; render(); }
-    else App.go('menu');
+    else {
+      Progreso.completeModule('civic', 20);
+      App.go('menu');
+    }
   }
   
   function prev() {

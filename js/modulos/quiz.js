@@ -83,14 +83,14 @@ var Quiz = (function() {
       answered = false;
       render();
     } else {
-      // Show result
+      Progreso.completeModule('quiz', score * 2);
       var pct = Math.round(score / questions.length * 100);
       var icon = pct >= 80 ? '🌟' : pct >= 60 ? '👍' : '📚';
       document.getElementById('quizContent').innerHTML = 
         '<div class="result-screen">' +
           '<div class="result-icon">' + icon + '</div>' +
-          '<h2>¡Quiz Completado!</h2>' +
-          '<p>Obtuviste ' + score + '/' + questions.length + ' respuestas correctas</p>' +
+          '<h2 style="font-family:Cinzel;color:#D4A017">¡Quiz Completado!</h2>' +
+          '<p style="color:#C25B28;margin:8px 0">Obtuviste ' + score + '/' + questions.length + ' respuestas correctas</p>' +
           '<div class="result-stats">' +
             '<div class="stat-box"><div class="stat-val">' + score + '</div><div class="stat-label">Correctas</div></div>' +
             '<div class="stat-box"><div class="stat-val">' + (questions.length - score) + '</div><div class="stat-label">Incorrectas</div></div>' +

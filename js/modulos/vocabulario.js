@@ -21,22 +21,39 @@ var Vocabulario = (function() {
     var total = words.length;
     var pct = ((current + 1) / total * 100);
 
-    var html = '<div class="c-hdr"><button class="back" onclick="App.go(\'menu\')">←</button>' +
-      '<h2>🗣️ Vocabulario Mixteco</h2><div class="c-score">' + (current+1) + '/' + total + '</div></div>' +
+    var html = '<div class="content-header"><button class="back-btn" onclick="App.go(\'menu\')">←</button>' +
+      '<h2>🗣️ Vocabulario Mixteco</h2><div class="quiz-score">' + (current+1) + '/' + total + '</div></div>' +
       '<div class="progress-bar"><div class="progress-fill" style="width:' + pct + '%"></div></div>' +
       '<div class="glyph-display"><div class="glyph-big">' + item.icon + '</div>' +
       '<div class="glyph-name">' + item.mixteco + '</div>' +
       '<div class="glyph-meaning">' + item.spanish + '</div></div>' +
-      '<div class="c-body"><div class="era-card">' +
-      '<div class="e-date">📂 ' + item.category + '</div>' +
+      '<div class="content-body"><div class="era-card">' +
+      '<div class="era-date">📂 ' + item.category + '</div>' +
       '<p>' + item.desc + '</p></div></div>' +
-      '<div class="c-nav"><button class="btn btn-outline btn-sm" onclick="Vocabulario.prev()" style="visibility:' + (current===0?'hidden':'visible') + '">← Anterior</button>' +
+      '<div class="content-nav"><button class="btn btn-outline btn-sm" onclick="Vocabulario.prev()" style="visibility:' + (current===0?'hidden':'visible') + '">← Anterior</button>' +
       '<button class="btn btn-sm" onclick="Vocabulario.next()">' + (current===total-1?'✓ Terminar':'Siguiente →') + '</button></div>';
 
     document.getElementById('vocabContent').innerHTML = html;
   }
 
-  function next() { if (current < words.length-1) { current++; render(); } else App.go('menu'); }
+  function next() {
+    if (current < words.length-1) { current++; render(); }
+    else {
+      Progreso.completeModule('vocabulario', 10);
+      document.getElementById('vocabContent').innerHTML =
+        '<div class="result-screen">' +
+          '<div class="result-icon">🗣️</div>' +
+          '<h2 style="font-family:Cinzel;color:#D4A017">¡Vocabulario Completado!</h2>' +
+          '<p style="color:#C25B28;margin:8px 0">Aprendiste ' + words.length + ' palabras en mixteco</p>' +
+          '<div class="result-stats">' +
+            '<div class="stat-box"><div class="stat-val">' + words.length + '</div><div class="stat-label">Palabras</div></div>' +
+            '<div class="stat-box"><div class="stat-val">+10</div><div class="stat-label">Monedas</div></div>' +
+          '</div>' +
+          '<button class="btn" onclick="App.go(\'menu\')">Volver al Menú</button>' +
+        '</div>';
+    }
+  }
+
   function prev() { if (current > 0) { current--; render(); } }
 
   return { init: init, next: next, prev: prev };

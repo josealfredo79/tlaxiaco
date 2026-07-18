@@ -32,39 +32,39 @@ var QuizVeloz = (function() {
     timeLeft = q.time;
     answered = false;
 
-    var html = '<div class="c-hdr"><button class="back" onclick="QuizVeloz.exit()">←</button>' +
-      '<h2>⚡ Quiz Veloz</h2><div class="c-score" id="qvTimer">⏱ ' + timeLeft + 's</div></div>' +
+    var html = '<div class="content-header"><button class="back-btn" onclick="QuizVeloz.exit()">←</button>' +
+      '<h2>⚡ Quiz Veloz</h2><div class="quiz-score" id="qvTimer">⏱ ' + timeLeft + 's</div></div>' +
       '<div class="progress-bar"><div class="progress-fill" style="width:' + ((current+1)/questions.length*100) + '%"></div></div>' +
-      '<div class="q-card"><div class="q-num">Pregunta ' + (current+1) + '/' + questions.length + ' • Puntos: ' + score + '</div>' +
-      '<div class="q-txt">' + q.q + '</div></div>' +
-      '<div class="q-opts" id="qvOpts">';
+      '<div class="quiz-card"><div class="quiz-num">Pregunta ' + (current+1) + '/' + questions.length + ' • Puntos: ' + score + '</div>' +
+      '<p class="quiz-question">' + q.q + '</p></div>' +
+      '<div class="quiz-options" id="qvOpts">';
 
     q.options.forEach(function(opt, i) {
-      html += '<button class="q-opt" data-i="' + i + '">' + opt + '</button>';
+      html += '<button class="quiz-opt" data-i="' + i + '">' + opt + '</button>';
     });
 
-    html += '</div><div class="q-fb" id="qvFb"></div>';
+    html += '</div><div class="quiz-feedback" id="qvFb"></div>';
     document.getElementById('quizVelozContent').innerHTML = html;
 
-    document.querySelectorAll('#qvOpts .q-opt').forEach(function(btn) {
+    document.querySelectorAll('#qvOpts .quiz-opt').forEach(function(btn) {
       btn.addEventListener('click', function() {
         if (answered) return;
         answered = true;
         clearInterval(timer);
         var chosen = parseInt(btn.dataset.i);
-        document.querySelectorAll('#qvOpts .q-opt').forEach(function(b, i) {
-          b.classList.add('off');
-          if (i === q.correct) b.classList.add('ok');
+        document.querySelectorAll('#qvOpts .quiz-opt').forEach(function(b, i) {
+          b.classList.add('disabled');
+          if (i === q.correct) b.classList.add('correct');
         });
         var fb = document.getElementById('qvFb');
         if (chosen === q.correct) {
           score += timeLeft;
-          btn.classList.add('ok');
-          fb.className = 'q-fb show ok';
+          btn.classList.add('correct');
+          fb.className = 'quiz-feedback show correct';
           fb.innerHTML = '✅ ¡Correcto! +' + timeLeft + ' puntos';
         } else {
-          btn.classList.add('no');
-          fb.className = 'q-fb show no';
+          btn.classList.add('wrong');
+          fb.className = 'quiz-feedback show wrong';
           fb.innerHTML = '❌ Incorrecto. Era: ' + q.options[q.correct];
         }
         setTimeout(function() {
@@ -84,11 +84,11 @@ var QuizVeloz = (function() {
         if (!answered) {
           answered = true;
           var fb = document.getElementById('qvFb');
-          fb.className = 'q-fb show no';
+          fb.className = 'quiz-feedback show wrong';
           fb.innerHTML = '⏰ ¡Tiempo! La respuesta era: ' + q.options[q.correct];
-          document.querySelectorAll('#qvOpts .q-opt').forEach(function(b, i) {
-            b.classList.add('off');
-            if (i === q.correct) b.classList.add('ok');
+          document.querySelectorAll('#qvOpts .quiz-opt').forEach(function(b, i) {
+            b.classList.add('disabled');
+            if (i === q.correct) b.classList.add('correct');
           });
           setTimeout(function() {
             if (current < questions.length - 1) { current++; render(); }
@@ -104,6 +104,8 @@ var QuizVeloz = (function() {
     var maxScore = questions.reduce(function(s, q) { return s + q.time; }, 0);
     var pct = Math.round(score / maxScore * 100);
     var icon = pct >= 70 ? '🌟' : pct >= 40 ? '⚡' : '📚';
+
+    Progreso.completeModule('quizVeloz', score);
 
     document.getElementById('quizVelozContent').innerHTML =
       '<div class="result-screen"><div class="result-icon">' + icon + '</div>' +
