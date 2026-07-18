@@ -200,3 +200,32 @@ body{min-height:100%;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;b
 .stat-box{background:rgba(194,91,40,.12);border:1px solid rgba(194,91,40,.3);border-radius:10px;padding:12px}
 .stat-val{font-size:1.6em;font-weight:900;color:#D4A017}
 .stat-label{font-size:.65em;color:#C25B28;margin-top:2px}
+
+/* ===== FIX: Memory game 3D flip ===== */
+.memory-grid {
+  perspective: 800px;
+}
+
+.memory-card {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+}
+
+.memory-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.memory-card.matched {
+  transform: rotateY(180deg);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.memory-front {
+  backface-visibility: hidden;
+}
+
+.memory-back {
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
