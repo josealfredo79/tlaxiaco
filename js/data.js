@@ -2,167 +2,167 @@ var Data = {
   timeline: [
     {
       era: "Época Prehispánica",
-      date: "antes de 1521",
-      text: "Tlaxiaco fue fundada por los ñuu savi (mixtecos) como un centro ceremonial y comercial importante. El nombre proviene del náhuatl 'Tlaxcalla-yanco' que significa 'tortilla grande' o 'lugar de la tortilla grande'.",
-      highlight: "Los mixtecos fueron grandes orfebres y ceramistas. Su arte se distinguish por el uso del oro y la pluma."
+      date: "400 a.C. - 1500 d.C.",
+      text: "El asentamiento inicial de Tlaxiaco se sitúa alrededor de 400 a.C., durante el inicio del Preclásico tardío en Mesoamérica. La ocupación abarca un periodo de más de 1,500 años. En Tlaxiaco existen 279 sitios arqueológicos que dan cuenta de su esplendor prehispánico.",
+      highlight: "El nombre 'Tlaxiaco' proviene del náhuatl 'tlachquiauhco', que significa 'en el lugar de la lluvia del juego de pelota'. En mixteco se llama 'Ndijiinu' o 'Ndisi nuu', que significa 'Buena vista'."
     },
     {
-      era: "Fundación Colonial",
-      date: "1536",
-      text: "Los españoles fundaron la villa de San Juan Bautista Tlaxiaco. La iglesia principal fue construida sobre un antiguo templo mixteco, uniendo dos mundos en un solo lugar.",
-      highlight: "La Parroquia de San Juan Bautista es una de las iglesias más antiguas de la región, con su característica fachada de cantera."
+      era: "La Conquista",
+      date: "1519",
+      text: "En 1519 la inminente conquista española se hizo presente en esta región con el mando de Francisco de Orosco. Llegaron las órdenes de los Agustinos, Dominicos y Franciscanos quienes de forma pacífica enseñaron su doctrina.",
+      highlight: "Tlaxiaco fue codiciada por los mexicas por su ubicación estratégica entre Coixtlahuaca y Tututepec, dos importantes señoríos mixtecos, por lo que fue invadida en varias ocasiones hasta convertirse en guarnición mexica."
     },
     {
-      era: "Siglo XVII",
-      date: "1600s",
-      text: "Tlaxiaco se convirtió en un centro comercial importante entre la Costa y la Sierra Norte. Los mercados de textiles y alimentos atrajo a comerciantes de toda la región.",
-      highlight: "El mercado de Tlaxiaco sigue siendo uno de los más importantes de Oaxaca, donde se encuentran productos de toda la región."
+      era: "Evangelización Colonial",
+      date: "1548",
+      text: "En 1548 llegan a Tlaxiaco Fray Gonzalo de Lucero y Fray Benito Hernández, quienes fundaron una ermita en el Barrio de San Pedro. Se conserva un convento dominico asesorado por Rodrigo Gil de Hontañón, destacando el 'Modillón dominico'.",
+      highlight: "El convento dominico tiene una copia exacta del 'Modillón dominico' en la iglesia parroquial de Santiago. La región tuvo grandes aportaciones a la economía novohispana con la producción de grana cochinilla."
     },
     {
-      era: "Siglo XIX",
-      date: "1800s",
-      text: "Durante la Independencia y la Reforma, Tlaxiaco fue escenario de importantes batallas. Los generales oaxaqueños lucharon por la libertad de nuestra tierra.",
-      highlight: "Benito Juárez, presidente de México, pasó por Tlaxiaco en su camino al exilio. La ciudad le dio refugio y apoyo."
+      era: "Independencia",
+      date: "1813",
+      text: "En 1813 el general José María Morelos y Pavón toma el camino hacia Acapulco y pasa por Tlaxiaco. En su estancia exhortó a los tlaxiaqueños a incorporarse a los ideales insurgentes.",
+      highlight: "La señora María Nava de Catalán, viuda del general Catalán, ofreció a sus hijos a la causa de la Independencia. Morelos la nombra Generala, hecho que da título a Tlaxiaco como Heroica Ciudad."
     },
     {
-      era: "Siglo XX",
-      date: "1900s",
-      text: "La Revolución Mexicana tocó las puertas de Tlaxiaco. Los campesinos y obreros se organizaron para luchar por sus derechos y la tierra.",
-      highlight: "Emilio Sánchez Piedras, gobernador de Oaxaca, nació en Tlaxiaco. Fue un defensor de los derechos indígenas."
+      era: "Batalla del Cerro Encantado",
+      date: "29 de abril de 1814",
+      text: "Se lleva a cabo la Batalla del Cerro Encantado, donde Ramos Sesma y un centenar de insurgentes sin armas ni artillería esperaron al ejército realista. Los insurgentes bañaron con piedras enormes a los que atacaban.",
+      highlight: "Hubo 19 muertos y 120 heridos. Los realistas gritaron '¡Mejor echen bala y no echen canto (cantera, piedra rocosa)!'. De ahí el nombre del cerro 'Encantado' y por qué Tlaxiaco es nombrada doblemente Heroica Ciudad."
     },
     {
-      era: "Época Contemporánea",
-      date: "1950-presente",
-      text: "Tlaxiaco ha crecido manteniendo sus tradiciones. La Feria de la Nieve, las fiestas patronales y los mercados tradicionales siguen siendo el corazón de la ciudad.",
-      highlight: "La Feria de la Nieve se celebra cada julio y atrae a miles de visitantes que vienen a probar las famosas nieves de Tlaxiaco."
+      era: "Porfirio Díaz en Tlaxiaco",
+      date: "1854",
+      text: "El general Porfirio Díaz, después de pelear en Teotongo durante la persecución de Santa Anna, llega a Tlaxiaco para refugiarse con su amigo cura Manuel Márquez, donde es asistido y curado de sus heridas.",
+      highlight: "En 1884, el Congreso del Estado decreta a Tlaxiaco cabecera de distrito y Heroica Ciudad. Tlaxiaco fue conocida como 'Ciudad de los Mártires de la Reforma' al ser asesinados varios partidarios de la reforma en el Barrio de San Pedro."
     }
   ],
 
   quiz: [
     {
-      q: "¿De qué lengua proviene el nombre 'Tlaxiaco'?",
-      options: ["Zapoteco", "Mixteco", "Náhuatl", "Chinanteco"],
+      q: "¿Qué significa 'Tlaxiaco' en náhuatl?",
+      options: ["Casa grande", "En el lugar de la lluvia del juego de pelota", "Río de flores", "Cerro del sol"],
+      correct: 1,
+      explanation: "'Tlachquiauhco' significa 'en el lugar de la lluvia del juego de pelota'. Aparece en el Códice Mendoza."
+    },
+    {
+      q: "¿Cómo se dice Tlaxiaco en mixteco?",
+      options: ["Ñuu Tlandehe", "Ndijiinu (Buena vista)", "Ñuu Dzaa", "Tu'un Savi"],
+      correct: 1,
+      explanation: "En mixteco se llama 'Ndijiinu' o 'Ndisi nuu', que significa 'Buena vista'."
+    },
+    {
+      q: "¿En qué año se situó el asentamiento inicial de Tlaxiaco?",
+      options: ["1000 a.C.", "400 a.C.", "100 a.C.", "500 d.C."],
+      correct: 1,
+      explanation: "El asentamiento inicial se sitúa alrededor de 400 a.C., durante el inicio del Preclásico tardío."
+    },
+    {
+      q: "¿Cuántos sitios arqueológicos existen en Tlaxiaco?",
+      options: ["50", "100", "279", "500"],
       correct: 2,
-      explanation: "El nombre proviene del náhuatl 'Tlaxcalla-yanco', que significa 'tortilla grande' o 'lugar de la tortilla grande'."
+      explanation: "En Tlaxiaco existen 279 sitios arqueológicos que dan cuenta de su esplendor prehispánico."
     },
     {
-      q: "¿En qué año fue fundada la villa colonial de Tlaxiaco?",
-      options: ["1492", "1521", "1536", "1600"],
-      correct: 2,
-      explanation: "Los españoles fundaron la villa de San Juan Bautista Tlaxiaco en 1536."
-    },
-    {
-      q: "¿Qué pueblo originario habitaba Tlaxiaco antes de la conquista?",
-      options: ["Aztecas", "Mayas", "Mixtecos", "Zoques"],
-      correct: 2,
-      explanation: "Tlaxiaco fue fundada por los ñuu savi (mixtecos), un pueblo de grandes orfebres y ceramistas."
-    },
-    {
-      q: "¿Cuál es la iglesia más antigua de Tlaxiaco?",
-      options: ["Iglesia de Santo Domingo", "Parroquia de San Juan Bautista", "Templo de la Cruz", "Iglesia de San Felipe"],
+      q: "¿Québatalla dio el título de 'Heroica' a Tlaxiaco?",
+      options: ["Batalla de Puebla", "Batalla del Cerro Encantado", "Batalla de Azcapotzalco", "Batalla de Tlaxcala"],
       correct: 1,
-      explanation: "La Parroquia de San Juan Bautista, construida sobre un antiguo templo mixteco, es una de las más antiguas de la región."
+      explanation: "La Batalla del Cerro Encantado del 29 de abril de 1814, donde insurgentes derrotaron al ejército realista."
     },
     {
-      q: "¿Qué famoso presidente pasó por Tlaxiaco?",
-      options: ["Porfirio Díaz", "Benito Juárez", "Francisco Madero", "Venustiano Carranza"],
+      q: "¿Qué presidente se refugió en Tlaxiaco en 1854?",
+      options: ["Benito Juárez", "Porfirio Díaz", "Antonio López de Santa Anna", "Valentín Gómez Farías"],
       correct: 1,
-      explanation: "Benito Juárez pasó por Tlaxiaco en su camino al exilio, y la ciudad le dio refugio y apoyo."
+      explanation: "Porfirio Díaz se refugió con su amigo cura Manuel Márquez para ser curado de sus heridas."
     },
     {
-      q: "¿Qué feria celebra Tlaxiaco cada julio?",
-      options: ["Feria del Mezcal", "Feria de la Nieve", "Feria del Chocolate", "Feria del Pan"],
+      q: "¿Qué monje dominico asesoró la construcción del convento?",
+      options: ["Fray Toribio de Benavente", "Rodrigo Gil de Hontañón", "Fray Bernardino de Sahagún", "Alonso de Molina"],
       correct: 1,
-      explanation: "La Feria de la Nieve se celebra cada julio y atrae a miles de visitantes a probar las famosas nieves de Tlaxiaco."
+      explanation: "Rodrigo Gil de Hontañón asesoró la construcción del convento dominico, que destaca por el 'Modillón dominico'."
     },
     {
-      q: "¿Qué gobernador de Oaxaca nació en Tlaxiaco?",
-      options: ["Jorge Candiani", "Emilio Sánchez Piedras", "Salomón Jara", "Alejandro Murat"],
+      q: "¿Qué producía la región de Tlaxiaco en la época colonial?",
+      options: ["Tabaco", "Grana cochinilla", "Cacao", "Plata"],
       correct: 1,
-      explanation: "Emilio Sánchez Piedras, gobernador de Oaxaca, nació en Tlaxiaco y fue defensor de los derechos indígenas."
+      explanation: "La producción de grana cochinilla fue una de las principales aportaciones a la economía novohispana."
     },
     {
-      q: "¿Qué productos eran comerciados en el mercado de Tlaxiaco?",
-      options: ["Solo maíz", "Textiles y alimentos", "Solo ropa", "Solo herramientas"],
+      q: "¿Qué heroína tlaxiaqueña fue nombrada Generala por Morelos?",
+      options: ["Josefa Ortiz de Domínguez", "María Nava de Catalán", "Leona Vicario", "Hermenegildo Galeana"],
       correct: 1,
-      explanation: "El mercado de Tlaxiaco comerciaba textiles y alimentos, atrayendo a comerciantes de toda la región."
+      explanation: "María Nava de Catalán, viuda del general Catalán, ofreció a sus hijos a la causa insurgente."
     },
     {
-      q: "¿Qué arte eran famosos los mixtecos?",
-      options: ["Pintura rupestre", "Orfebrería y cerámica", "Escultura en piedra", "Tejido"],
+      q: "¿Cuántos muertos hubo en la Batalla del Cerro Encantado?",
+      options: ["5", "19", "50", "100"],
       correct: 1,
-      explanation: "Los mixtecos fueron grandes orfebres y ceramistas, conocidos por su uso del oro y la pluma."
-    },
-    {
-      q: "¿Qué significa 'Tlaxcalla-yanco' en náhuatl?",
-      options: ["Casa grande", "Tortilla grande", "Río grande", "Cerro grande"],
-      correct: 1,
-      explanation: "'Tlaxcalla-yanco' significa 'tortilla grande' o 'lugar de la tortilla grande'."
+      explanation: "Hubo 19 muertos y 120 heridos en la batalla del 29 de abril de 1814."
     }
   ],
 
   legends: [
     {
-      title: "La Llorona del Río",
-      icon: "👻",
-      summary: "Una mujer que llora por sus hijos perdidos",
-      text: "<p>Cuenta la leyenda que en las noches de luna llena, se escucha el llanto de una mujer cerca del río que cruza Tlaxiaco. Dicen que es el espíritu de una madre que perdió a sus hijos en las aguas turbulentas.</p><p>Los ancianos del pueblo recuerdan que hace muchos años, una joven se arrojó al río buscando a sus pequeños que se habían caído jugando. Desde entonces, su espíritu vaga por las orillas, buscando a sus hijos.</p><p class='legend-quote'>\"Si escuchas llorar en la noche, no te acerques al río. El llanto de la madre puede llevarte consigo.\"</p><p>Los niños del pueblo dicen que si te quedas quieto y en silencio, puedes ver su sombra plateada reflejada en el agua, extendiendo sus brazos hacia la orilla.</p>"
+      title: "El Cerro Encantado",
+      icon: "⛰️",
+      summary: "La batalla que dio nombre al cerro",
+      text: "<p>El 29 de abril de 1814, en lo que hoy conocemos como el Cerro Encantado, se libró una de las batallas más memorables de la Independencia en esta región.</p><p>Ramos Sesma y un centenar de insurgentes, sin armas ni artillería, esperaron al ejército realista dirigido por el comandante Obeso. Los insurgentes utilizaron piedras enormes que hacían rodar cuesta abajo, junto con algunos disparos de fusil.</p><p class='legend-quote'>'¡Mejor echen bala y no echen canto (cantera, piedra rocosa)!'</p><p>Con este grito de desesperación, los realistas se dispersaron. De ahí el nombre del cerro 'Encantado' y el doble título de Heroica Ciudad para Tlaxiaco. Fueron 19 muertos y 120 heridos los que cayeron ese día.</p>"
     },
     {
-      title: "El Tesoro Escondido del Cerro",
-      icon: "💰",
-      summary: "Un tesoro mixteco que nadie ha encontrado",
-      text: "<p>Existe la creencia de que en lo alto del cerro que domina Tlaxiaco, los mixtecos escondieron un tesoro invaluable antes de la llegada de los españoles. Orfebrería de oro y plumas que relucía con la luz del sol.</p><p>Dicen que el tesoro está protegido por espíritus ancestrales que no permiten que nadie lo encuentre. Solo aquellos con corazón puro podrían verlo.</p><p class='legend-quote'>\"El cerro guarda sus secretos. Solo los que respeten la tierra podrán ver el brillo del pasado.\"</p><p>Muchos han buscado el tesoro, pero ninguno lo ha encontrado. Los más ancianos dicen que el tesoro no es de oro ni de plata, sino de sabiduría y memoria que el pueblo guarda en su corazón.</p>"
+      title: "María Nava de Catalán",
+      icon: "🎖️",
+      summary: "La heroína que fue nombrada Generala",
+      text: "<p>María Nava de Catalán era una mujer valiente que vivía en Tlaxiaco. Cuando su esposo, el general Catalán, murió en la lucha por la Independencia, ella no se rindió.</p><p>Junto a otras nativas de la ciudad, ofreció a sus propios hijos a la causa insurgente. Esta acción tan valiente llegó a oídos del general José María Morelos.</p><p class='legend-quote'>Morelos la nombra Generala en reconocimiento a su valentía y sacrificio.</p><p>Fue esta acción la que motivó que Tlaxiaco recibiera el título de 'Heroica Ciudad'. María Nava se convirtió en un símbolo del sacrificio de las mujeres en la lucha por la libertad.</p>"
     },
     {
-      title: "La Mujer que se Convirtió en Piedra",
-      icon: "🪨",
-      summary: "Una joven castigada por su vanidad",
-      text: "<p>En los tiempos antiguos, vivía en Tlaxiaco una joven de extraordinaria belleza que se creía superior a todas las demás. Se burlaba de los ancianos y no respetaba las tradiciones de su pueblo.</p><p>Un día, un anciano le advirtió: \"La belleza sin sabiduría es como una flor sin raíz\". Pero ella se rio y siguió con su vida vanidosa.</p><p class='legend-quote'>\"La belleza sin sabiduría es como una flor sin raíz.\"</p><p>Al amanecer siguiente, la encontraron convertida en piedra, con su expresión de desprecio eternizada. Desde entonces, esa piedra se encuentra en la entrada del pueblo, como recordatorio de que la verdadera belleza viene del respeto y la sabiduría.</p>"
+      title: "Porfirio y el Cura Márquez",
+      icon: "🏥",
+      summary: "La curación del futuro presidente",
+      text: "<p>En diciembre de 1854, el joven Porfirio Díaz llega herido a Tlaxiaco. Había peleado en Teotongo y huía de la persecución de Santa Anna.</p><p>Díaz se refugió en casa de su amigo, el cura Manuel Márquez, quien lo acogió y los tlaxiaqueños lo curaron de sus heridas. Esta experiencia marcó profundamente al futuro presidente.</p><p class='legend-quote'>Porfirio siempre recordaría la hospitalidad de Tlaxiaco. Años después, siendo presidente, nunca olvidó este pueblo que lo salvó.</p><p>En 1866, Díaz intentaría tomar Tlaxiaco en una lucha encarnizada de dos días, pero tuvo que replegarse a las montañas.</p>"
     },
     {
-      title: "El Espíritu del Mercado",
-      icon: "Market",
-      summary: "Los fantasmas que cuidan el mercado tradicional",
-      text: "<p>Los vendedores del mercado de Tlaxiaco aseguran que en las noches, cuando el mercado cierra, los espíritus de los antiguos comerciantes mixtecos recorren los pasillos vacíos.</p><p>Susurran precios, regatean y ríen como si fuera día de mercado. Dicen que son los ancestros que siguen cuidando el comercio justo y la honestidad.</p><p class='legend-quote'>\"Si vendes con honestidad, los ancestros te protegerán. Si engañas, ellos te cobrarán.\"</p><p>Los más supersticiosos dicen que si dejas una ofrenda de maíz o flores en la entrada del mercado, los espíritus te ayudarán a tener buenas ventas al día siguiente.</p>"
+      title: "Los 279 Secretos",
+      icon: "🏺",
+      summary: "Los sitios arqueológicos olvidados",
+      text: "<p>Bajo las calles de Tlaxiaco y en los cerros que la rodean, yacen 279 sitios arqueológicos que guardan los secretos de más de 2,000 años de historia.</p><p>Desde las pirámides más pequeñas hasta los talleres de cerámica y orfebrería mixteca, cada sitio cuenta una parte de la historia de los Ñuu Savi.</p><p class='legend-quote'>'Los cerros de Tlaxiaco no son solo piedra y tierra. Son la memoria viva de un pueblo que supo ver la belleza en la buena vista.'</p><p>Dicen los ancianos que cuando la luna llena ilumina el valle, se pueden ver las sombras de las antiguas construcciones reflejadas en el rocío de la mañana, como si el pasado quisiera recordarnos que nunca se fue.</p>"
     }
   ],
 
   figures: [
     {
-      name: "Benito Juárez",
+      name: "José María Morelos y Pavón",
       icon: "🎖️",
-      role: "Presidente de México",
-      bio: "Benito Juárez García (1806-1872) fue un abogado y político zapoteco que se convirtió en presidente de México. Durante su mandato, separó la Iglesia del Estado y modernizó las instituciones.",
-      tlaxiaco: "Juárez pasó por Tlaxiaco en su camino al exilio en 1853. La ciudad le dio refugio y apoyo, demostrando su compromiso con la justicia y la libertad."
+      role: "Líder Insurgente",
+      bio: "Morelos fue uno de los líderes más importantes de la Independencia de México. En 1813, pasó por Tlaxiaco en su camino hacia Acapulco.",
+      tlaxiaco: "Durante su estancia en Tlaxiaco, Morelos exhortó a los habitantes a incorporarse a los ideales insurgentes y nombró Generala a María Nava de Catalán."
     },
     {
-      name: "Emilio Sánchez Piedras",
+      name: "María Nava de Catalán",
+      icon: "👩",
+      role: "Heroína de la Independencia",
+      bio: "Viuda del general Catalán, María Nava ofreció a sus hijos a la causa insurgente, siendo nombrada Generala por Morelos.",
+      tlaxiaco: "Su valentía motivó que Tlaxiaco recibiera el título de Heroica Ciudad. Es símbolo del sacrificio de las mujeres tlaxiaqueñas."
+    },
+    {
+      name: "Porfirio Díaz",
       icon: "📜",
-      role: "Gobernador de Oaxaca",
-      bio: "Emilio Sánchez Piedras (1893-1972) fue gobernador de Oaxaca de 1947 a 1950. Nació en Tlaxiaco y fue un defensor de los derechos indígenas y la educación.",
-      tlaxiaco: "Como gobernador, Sánchez Piedras implementó programas educativos en lenguas indígenas y mejoró la infraestructura de su natal Tlaxiaco."
+      role: "Presidente de México",
+      bio: "Porfirio Díaz (1830-1915) fue presidente de México durante 35 años. En 1854 se refugió en Tlaxiaco herido.",
+      tlaxiaco: "Díaz se refugió con el cura Manuel Márquez y fue curado por los tlaxiaqueños. Esta experiencia marcó su vida."
     },
     {
-      name: "Los Mixtecos Anónimos",
+      name: "Rodrigo Gil de Hontañón",
+      icon: "🏛️",
+      role: "Arquitecto del Convento",
+      bio: "Fue el arquitecto que asesoró la construcción del convento dominico de Tlaxiaco en el siglo XVI.",
+      tlaxiaco: "Su obra incluye el famoso 'Modillón dominico', una ménsula decorativa que adorna la cornisa del convento."
+    },
+    {
+      name: "Los Ñuu Savi",
       icon: "🏺",
-      role: "Fundadores de Tlaxiaco",
-      bio: "Los ñuu savi (mixtecos) fueron los primeros habitantes de Tlaxiaco. Famosos orfebres y ceramistas, crearon una de las civilizaciones más avanzadas de Mesoamérica.",
-      tlaxiaco: "Los mixtecos dejaron su huella en cada piedra y cerámica de Tlaxiaco. Su legado vive en la cultura, el arte y las tradiciones del pueblo."
-    },
-    {
-      name: "Los Revolucionarios",
-      icon: "⚔️",
-      role: "Luchadores por la tierra",
-      bio: "Durante la Revolución Mexicana (1910-1920), los campesinos de Tlaxiaco se organizaron para luchar por sus derechos y la tierra que les pertenecía.",
-      tlaxiaco: "Los revolucionarios tlaxiaquenses combatieron bajo las órdenes de líderes como Zapata y Villa, buscando justicia para los pueblos indígenas."
-    },
-    {
-      name: "Los Artesanos",
-      icon: "🎨",
-      role: "Guardianes de la tradición",
-      bio: "Generación tras generación, los artesanos de Tlaxiaco han mantenido vivas las tradiciones de cerámica, textiles y orfebrería heredadas de los mixtecos.",
-      tlaxiaco: "Los barros negros de Tlaxiaco son famosos en todo México. Los artesanos siguen usando técnicas ancestrales para crear piezas únicas."
+      role: "Pueblo Mixteco",
+      bio: "Los Ñuu Savi ('Gente de la Lluvia') son el pueblo mixteco que habitó Tlaxiaco desde 400 a.C.",
+      tlaxiaco: "Dejaron 279 sitios arqueológicos, su nombre en mixteco 'Ndijiinu' (Buena vista) y una tradición de orfebrería y cerámica."
     }
   ],
 
@@ -170,60 +170,55 @@ var Data = {
     {
       title: "Ubicación",
       icon: "📍",
-      content: "Tlaxiaco se encuentra en la Sierra Norte de Oaxaca, a 2,440 metros sobre el nivel del mar. Está ubicada en la región de la Mixteca, una de las zonas más ricas culturalmente de México."
+      content: "Tlaxiaco se encuentra en el noroeste del estado de Oaxaca, en la Mixteca Alta. Coordenadas: 17°15'58\"N 97°40'36\"O. Pertenece a la Región Mixteca Oaxaqueña."
     },
     {
-      title: "Clima",
+      title: "Altitud y Clima",
       icon: "🌡️",
-      content: "El clima de Tlaxiaco es templado con lluvias en verano. Las temperaturas varían entre 8°C y 22°C. Las mañanas suelen ser frescas y las tardes agradables."
+      content: "A 2,041 metros sobre el nivel del mar. Su clima predominante es templado con lluvias en verano. La vegetación es bosque de pino y encino."
     },
     {
-      title: "Ríos y Montañas",
-      icon: "🏔️",
-      content: "Tlaxiaco está rodeada de montañas y ríos. El río Tlaxiaco cruza la ciudad, dando vida a los campos y jardines. Los cerros que la rodean son el hogar de flora y fauna única."
+      title: "Superficie",
+      icon: "📐",
+      content: "El municipio tiene una superficie de 343.2 km². La densidad de población es de 48.47 habitantes por km²."
     },
     {
-      title: "Biodiversidad",
-      icon: "🌿",
-      content: "La región de Tlaxiaco alberga una gran biodiversidad: desde pinos y encinos en las montañas hasta aves exóticas como el colibrí y el trogón. Los bosques son el hogar de venados, conejos y许多 aves."
+      title: "Población",
+      icon: "👥",
+      content: "Según el censo 2020, Tlaxiaco tiene 40,123 habitantes. El gentilicio es 'tlaxiaqueño' o 'tlaxiaqueña'."
     },
     {
-      title: "El Mercado",
-      icon: "🏪",
-      content: "El mercado de Tlaxiaco es uno de los más importantes de la Mixteca. Aquí se encuentran productos frescos, artesanías, textiles y los famosos quesos y nieves de la región."
+      title: "Código Postal y Lada",
+      icon: "📮",
+      content: "Código postal: 69800. Clave telefónica: 953. Código INEGI: 203970001."
     }
   ],
 
   culture: [
     {
-      title: "Fiestas Patronales",
-      icon: "🎉",
-      content: "Las fiestas patronales de San Juan Bautista se celebran en junio. Incluyen misas, procesiones, música de banda, danza de los diablos y fuegos artificiales. Todo el pueblo se viste de gala."
-    },
-    {
-      title: "La Feria de la Nieve",
-      icon: "🍧",
-      content: "Cada julio, Tlaxiaco celebra la Feria de la Nieve, donde se exhiben las famosas nieves artesanales de la región. Sabores como tuna, mamey, guanábana y chocolate atraen a miles de visitantes."
-    },
-    {
       title: "Gastronomía",
       icon: "🍽️",
-      content: "La cocina tlaxiaquense combina sabores prehispánicos y coloniales. Destacan los tamales de mole, el tasajo asado, las empanadas de amarillo y los quesos frescos acompañados de pan de yema."
+      content: "El mole negro estilo Tlaxiaco es famoso por sus diversos ingredientes: chiles, cacahuates, pepitas, piña, jitomate, chorizo y chocolate. También destaca la barbacoa de borrego, chivo o res, cocida en hornos de tierra con piedras de río y pencas de maguey."
     },
     {
-      title: "Artesanías",
-      icon: "🏺",
-      content: "Tlaxiaco es famosa por sus barros negros, una técnica ancestral que crea piezas de cerámica de color negro intenso. También destacan los textiles bordados y las joyería de plata."
+      title: "Antojitos Tlaxiaqueños",
+      icon: "🫔",
+      content: "La cemita tlaxiaqueña es un platillo emblemático. También destacan los esquites, tlayudas, alegrías, tamales, chiles rellenos y pozole de mole amarillo."
     },
     {
-      title: "Música y Danza",
-      icon: "💃",
-      content: "La música de Tlaxiaco incluye bandas de viento, sones y jarabes. La danza de los diablos, con sus máscaras coloridas, es una de las tradiciones más vivas de las fiestas patronales."
+      title: "Bebidas Tradicionales",
+      icon: "🥂",
+      content: "El pulque, tepache y ticunche (bebida a base de maguey que se encuentra en los cerros) son las bebidas tradicionales de la región."
     },
     {
-      title: "Lenguas",
-      icon: "🗣️",
-      content: "En Tlaxiaco se hablan mixteco, náhuatl y español. Las lenguas indígenas son parte del patrimonio cultural y se enseñan en algunas escuelas de la región."
+      title: "El Convento Dominico",
+      icon: "⛪",
+      content: "El convento dominico del siglo XVI, asesorado por Rodrigo Gil de Hontañón, destaca por el 'Modillón dominico', una ménsula decorativa única. Se conserva una copia exacta en la iglesia de Santiago."
+    },
+    {
+      title: "El Modillón Dominico",
+      icon: "🏛️",
+      content: "El modillón es la ménsula o zapata que adorna por debajo a una cornisa. El de Tlaxiaco es una pieza única de la arquitectura colonial novohispana."
     }
   ]
 };
