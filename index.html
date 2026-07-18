@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#1A0F08">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <title>Tlaxiaco — Historia Viva de la Mixteca</title>
 <link rel="stylesheet" href="css/mixteco.css">
 </head>
@@ -10,83 +12,69 @@
 
 <!-- HOME -->
 <div id="home" class="screen on">
-  <div class="glyph-float">🦅</div>
-  <div class="glyph-float">🐆</div>
-  <div class="glyph-float">🐒</div>
-  <div class="glyph-float">🌸</div>
+  <div class="glyph-bg">🦅</div>
+  <div class="glyph-bg">🐆</div>
+  <div class="glyph-bg">🐒</div>
+  <div class="glyph-bg">🌸</div>
   <div class="greca"></div>
-  <div class="glyph-row">
-    <span class="glyph-main">🦅</span>
-    <span class="glyph-main">🌽</span>
-    <span class="glyph-main">🌧️</span>
+  <div class="home-icons">
+    <span>🦅</span><span>🌽</span><span>🌧️</span>
   </div>
   <h1 class="title">Tlaxiaco</h1>
   <p class="subtitle">Ndijiinu — Buena Vista</p>
-  <p class="desc">Descubre la historia, los glifos y las tradiciones del pueblo Ñuu Savi (Pueblo de la Lluvia)</p>
-  <button class="btn" onclick="App.go('menu')">🏛️ Explorar</button>
-  <div class="greca" style="margin-top:16px"></div>
+  <p class="desc">Descubre la historia, los glifos y las tradiciones del pueblo Ñuu Savi</p>
+  <button class="btn" onclick="App.go('menu')">🏛️ ExplORAR</button>
+  <div class="greca" style="margin-top:12px"></div>
 </div>
 
 <!-- MENU -->
 <div id="menu" class="screen">
-  <div class="header"><h1>🏛️ Tlaxiaco — Ndijiinu</h1></div>
-  <div class="section">📜 Historia</div>
+  <div class="hdr"><h1>🏛️ Tlaxiaco — Ndijiinu</h1></div>
+  
+  <div class="sec">📜 Historia</div>
   <div class="grid">
     <div class="card" onclick="App.go('timeline')"><span class="icon">📜</span><div class="name">Línea del Tiempo</div><div class="detail">Desde 400 a.C.</div></div>
-    <div class="card" onclick="App.go('quiz')"><span class="icon">🧠</span><div class="name">Quiz Histórico</div><div class="detail">Pon a prueba tu conocimiento</div></div>
+    <div class="card" onclick="App.go('quiz')"><span class="icon">🧠</span><div class="name">Quiz Histórico</div><div class="detail">10 preguntas</div></div>
   </div>
-  <div class="section">⚖️ Valores Cívicos</div>
+  
+  <div class="sec">⚖️ Valores Cívicos</div>
   <div class="grid">
-    <div class="card" onclick="App.go('civic')"><span class="icon">⚖️</span><div class="name">Valores Cívicos</div><div class="detail">Respeto, Honestidad, Solidaridad</div></div>
-    <div class="card" onclick="App.go('scenarios')"><span class="icon">🎭</span><div class="name">Escenarios</div><div class="detail">Toma decisiones reales</div></div>
+    <div class="card" onclick="App.go('civic')"><span class="icon">⚖️</span><div class="name">Valores</div><div class="detail">Respeto, Honradez</div></div>
+    <div class="card" onclick="App.go('scenarios')"><span class="icon">🎭</span><div class="name">Escenarios</div><div class="detail">Decisiones reales</div></div>
   </div>
-  <div class="section">🏺 Cultura Ñuu Savi</div>
+  
+  <div class="sec">🏺 Cultura Ñuu Savi</div>
   <div class="grid">
-    <div class="card" onclick="App.go('glyphs')"><span class="icon">🏺</span><div class="name">Glifos Mixtecos</div><div class="detail">Signos del calendario</div></div>
-    <div class="card" onclick="App.go('legends')"><span class="icon">👻</span><div class="name">Leyendas</div><div class="detail">Historias ancestrales</div></div>
-    <div class="card" onclick="App.go('figures')"><span class="icon">👤</span><div class="name">Personajes</div><div class="detail">Héroes de Tlaxiaco</div></div>
+    <div class="card" onclick="App.go('glyphs')"><span class="icon">🏺</span><div class="name">Glifos</div><div class="detail">Símbolos antiguos</div></div>
+    <div class="card" onclick="App.go('legends')"><span class="icon">👻</span><div class="name">Leyendas</div><div class="detail">Historias vivas</div></div>
+    <div class="card" onclick="App.go('figures')"><span class="icon">👤</span><div class="name">Personajes</div><div class="detail">Héroes locales</div></div>
+    <div class="card" onclick="App.go('memory')"><span class="icon">🧠</span><div class="name">Memory</div><div class="detail">Encuentra valores</div></div>
   </div>
-  <div class="section">🎮 Juegos Interactivos</div>
-  <div class="grid">
-    <div class="card" onclick="App.go('memory')"><span class="icon">🧠</span><div class="name">Memory de Valores</div><div class="detail">Empareja los símbolos</div></div>
+  
+  <div class="sec">📖 Glifos del Calendario</div>
+  <div class="glyph-grid">
+    <div class="glyph-box"><div class="g-ico">🦅</div><div class="g-nam">Cuauhtli</div><div class="g-txt">Águila</div></div>
+    <div class="glyph-box"><div class="g-ico">🐆</div><div class="g-nam">Ocelotl</div><div class="g-txt">Jaguar</div></div>
+    <div class="glyph-box"><div class="g-ico">🌧️</div><div class="g-nam">Quiaviz</div><div class="g-txt">Lluvia</div></div>
+    <div class="glyph-box"><div class="g-ico">🌽</div><div class="g-nam">Cintli</div><div class="g-txt">Maíz</div></div>
+    <div class="glyph-box"><div class="g-ico">🌸</div><div class="g-nam">Xóchitl</div><div class="g-txt">Flor</div></div>
+    <div class="glyph-box"><div class="g-ico">⛰️</div><div class="g-nam">Tepec</div><div class="g-txt">Cerro</div></div>
+    <div class="glyph-box"><div class="g-ico">🐒</div><div class="g-nam">Ozomatli</div><div class="g-txt">Mono</div></div>
+    <div class="glyph-box"><div class="g-ico">🦌</div><div class="g-nam">Mazatl</div><div class="g-txt">Venado</div></div>
   </div>
-  <div class="section">📖 Aprende los Glifos</div>
-  <div class="glyph-demo">
-    <div class="glyph-item"><span class="ico">🦅</span><span class="lbl">Cuauhtli</span><span class="meaning">Águila — Rey</span></div>
-    <div class="glyph-item"><span class="ico">🐆</span><span class="lbl">Ocelotl</span><span class="meaning">Jaguar — Guerrero</span></div>
-    <div class="glyph-item"><span class="ico">🌧️</span><span class="lbl">Quiaviz</span><span class="meaning">Lluvia — Ñuu Savi</span></div>
-    <div class="glyph-item"><span class="ico">🌽</span><span class="lbl">Cintli</span><span class="meaning">Maíz — Alimento</span></div>
-    <div class="glyph-item"><span class="ico">🌸</span><span class="lbl">Xóchitl</span><span class="meaning">Flor — Belleza</span></div>
-    <div class="glyph-item"><span class="ico">⛰️</span><span class="lbl">Tepec</span><span class="meaning">Cerro — Sagrado</span></div>
-    <div class="glyph-item"><span class="ico">🐒</span><span class="lbl">Ozomatli</span><span class="meaning">Mono — Danza</span></div>
-    <div class="glyph-item"><span class="ico">🦌</span><span class="lbl">Mazatl</span><span class="meaning">Venado — Libertad</span></div>
-  </div>
-  <button class="btn btn-outline" onclick="App.go('home')" style="margin-top:12px">← Volver al Inicio</button>
-  <div class="greca" style="margin-top:12px"></div>
+  
+  <button class="btn btn-outline btn-sm" onclick="App.go('home')" style="margin-top:8px;width:100%;max-width:400px">← Inicio</button>
+  <div class="greca" style="margin-top:8px"></div>
 </div>
 
-<!-- TIMELINE -->
+<!-- CONTENT SCREENS -->
 <div id="timeline" class="screen"><div id="timelineContent"></div></div>
-
-<!-- QUIZ -->
 <div id="quiz" class="screen"><div id="quizContent"></div></div>
-
-<!-- CIVIC -->
 <div id="civic" class="screen"><div id="civicContent"></div></div>
-
-<!-- SCENARIOS -->
 <div id="scenarios" class="screen"><div id="scenariosContent"></div></div>
-
-<!-- GLYPHS -->
 <div id="glyphs" class="screen"><div id="glyphsContent"></div></div>
-
-<!-- LEGENDS -->
 <div id="legends" class="screen"><div id="legendsContent"></div></div>
-
-<!-- FIGURES -->
 <div id="figures" class="screen"><div id="figuresContent"></div></div>
-
-<!-- MEMORY -->
 <div id="memory" class="screen"><div id="memoryContent"></div></div>
 
 <script src="js/app.js"></script>
