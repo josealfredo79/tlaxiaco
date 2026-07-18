@@ -45,6 +45,7 @@ var Adivinanzas = (function() {
   function reveal() {
     var fb = document.getElementById('adivFb');
     fb.className = 'quiz-feedback show correct';
+    fb.removeAttribute('style');
     fb.innerHTML = '✅ ' + data[current].answer;
   }
 
