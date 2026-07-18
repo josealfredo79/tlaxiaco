@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Tlaxiaco Mixteco - Prototipo</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow-x:hidden;font-family:'Segoe UI',system-ui,sans-serif;background:#1A0F08;color:#F5E6C8}
+body{display:flex;flex-direction:column;align-items:center}
+
+.screen{display:none;width:100%;min-height:100vh;flex-direction:column;align-items:center;padding:20px;gap:16px}
+.screen.on{display:flex}
+
+/* GRECA ESCALONADA - Patrón Mixteco */
+.greca{width:100%;height:12px;background:repeating-linear-gradient(90deg,transparent,transparent 8px,#C25B28 8px,#C25B28 16px),repeating-linear-gradient(90deg,transparent,transparent 16px,#D4A017 16px,#D4A017 24px);clip-path:polygon(0 0,8px 0,8px 4px,16px 4px,16px 0,24px 0,24px 8px,16px 8px,16px 12px,8px 12px,8px 8px,0 8px)}
+
+/* HOME */
+#home{background:linear-gradient(180deg,#1A0F08 0%,#2D1810 50%,#1A0F08 100%);justify-content:center;position:relative;overflow:hidden}
+
+/* Glifos de fondo - símbolos mesoamericanos */
+.glyph-float{position:absolute;font-size:4em;opacity:0.06;pointer-events:none}
+.glyph-float:nth-child(1){top:8%;left:5%;animation:glow 3s ease-in-out infinite}
+.glyph-float:nth-child(2){top:15%;right:8%;animation:glow 4s ease-in-out infinite 0.5s}
+.glyph-float:nth-child(3){bottom:20%;left:10%;animation:glow 3.5s ease-in-out infinite 1s}
+.glyph-float:nth-child(4){bottom:10%;right:5%;animation:glow 4.5s ease-in-out infinite 1.5s}
+
+@keyframes glow{0%,100%{opacity:0.06;transform:scale(1)}50%{opacity:0.12;transform:scale(1.1)}}
+
+/* Glifos principales */
+.glyph-row{display:flex;gap:24px;margin-bottom:12px}
+.glyph-main{font-size:3em;filter:drop-shadow(0 0 8px rgba(212,160,23,0.5));animation:float 2.5s ease-in-out infinite}
+.glyph-main:nth-child(2){animation-delay:0.4s}
+.glyph-main:nth-child(3){animation-delay:0.8s}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+.title{font-size:2.8em;font-weight:900;text-align:center;background:linear-gradient(135deg,#D4A017,#C25B28,#1A8A7D);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.subtitle{color:#D4A017;font-size:1em;text-align:center;font-weight:600;letter-spacing:1px}
+.desc{color:#C25B28;text-align:center;font-size:0.9em;line-height:1.5;max-width:300px;margin-bottom:8px}
+
+.btn{background:linear-gradient(145deg,#D4A017,#C25B28);border:none;border-radius:30px;padding:18px 40px;font-size:1.1em;font-weight:700;color:#1A0F08;cursor:pointer;box-shadow:0 6px 20px rgba(212,160,23,0.4);transition:all 0.3s;text-transform:uppercase;letter-spacing:1px}
+.btn:active{transform:scale(0.95)}
+
+/* MENU */
+#menu{background:linear-gradient(180deg,#1A0F08,#2D1810);justify-content:flex-start;padding-top:0}
+
+.header{background:linear-gradient(135deg,#1A0F08,#2D1810);border-bottom:3px solid #D4A017;padding:16px;width:100%;display:flex;align-items:center;justify-content:center;position:sticky;top:0;z-index:10}
+.header h1{font-size:1.4em;color:#D4A017;text-align:center}
+
+.section{color:#C25B28;font-size:0.75em;text-transform:uppercase;letter-spacing:2px;width:100%;max-width:400px;text-align:left;border-bottom:2px solid rgba(194,91,40,0.3);padding-bottom:4px;margin-top:12px}
+
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;width:100%;max-width:400px}
+
+.card{background:linear-gradient(145deg,#F5E6C8,#E8D5B5);border:2px solid #C25B28;border-radius:16px;padding:16px 12px;cursor:pointer;transition:all 0.3s;position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#C25B28,#D4A017,#1A8A7D)}
+.card:active{transform:scale(0.95)}
+.card .icon{font-size:2em;margin-bottom:6px;display:block}
+.card .name{color:#1A0F08;font-weight:800;font-size:0.85em}
+.card .detail{color:#C25B28;font-size:0.65em;margin-top:2px}
+
+/* GLIFOS MIXTECOS - Emojis que representan conceptos */
+.glyph-demo{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;width:100%;max-width:400px;margin:8px 0}
+.glyph-item{background:rgba(194,91,40,0.1);border:2px solid #C25B28;border-radius:10px;padding:10px 14px;text-align:center;cursor:pointer;transition:all 0.3s}
+.glyph-item:active{background:rgba(212,160,23,0.2);transform:scale(1.05)}
+.glyph-item .ico{font-size:1.8em;display:block;margin-bottom:2px}
+.glyph-item .lbl{font-size:0.6em;color:#C25B28;font-weight:600}
+.glyph-item .meaning{font-size:0.55em;color:#8B6914}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+  .grid{gap:8px}
+  .card{padding:12px 8px}
+  .card .icon{font-size:1.6em}
+  .card .name{font-size:0.8em}
+  .title{font-size:2.2em}
+  .glyph-demo{gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- HOME -->
+<div id="home" class="screen on">
+  <!-- Glifos de fondo - animales y símbolos mixtecos -->
+  <div class="glyph-float">🦅</div>
+  <div class="glyph-float">🐆</div>
+  <div class="glyph-float">🐒</div>
+  <div class="glyph-float">🌸</div>
+  
+  <div class="greca"></div>
+  
+  <div class="glyph-row">
+    <span class="glyph-main">🦅</span>
+    <span class="glyph-main">🌽</span>
+    <span class="glyph-main">🌧️</span>
+  </div>
+  
+  <h1 class="title">Tlaxiaco</h1>
+  <p class="subtitle">Ndijiinu — Buena Vista</p>
+  <p class="desc">Descubre la historia, los glifos y las tradiciones del pueblo Ñuu Savi (Pueblo de la Lluvia)</p>
+  
+  <button class="btn" onclick="showScreen('menu')">🏛️ Explorar</button>
+  
+  <div class="greca" style="margin-top:16px"></div>
+</div>
+
+<!-- MENU -->
+<div id="menu" class="screen">
+  <div class="header">
+    <h1>🏛️ Tlaxiaco — Ndijiinu</h1>
+  </div>
+  
+  <div class="section">📜 Historia</div>
+  <div class="grid">
+    <div class="card" onclick="alert('Línea del Tiempo')">
+      <span class="icon">📜</span>
+      <div class="name">Línea del Tiempo</div>
+      <div class="detail">Desde 400 a.C.</div>
+    </div>
+    <div class="card" onclick="alert('Quiz Histórico')">
+      <span class="icon">🧠</span>
+      <div class="name">Quiz Histórico</div>
+      <div class="detail">Pon a prueba tu conocimiento</div>
+    </div>
+  </div>
+  
+  <div class="section">⚖️ Valores Cívicos</div>
+  <div class="grid">
+    <div class="card" onclick="alert('Valores Cívicos')">
+      <span class="icon">⚖️</span>
+      <div class="name">Valores Cívicos</div>
+      <div class="detail">Respeto, Honestidad, Solidaridad</div>
+    </div>
+    <div class="card" onclick="alert('Escenarios')">
+      <span class="icon">🎭</span>
+      <div class="name">Escenarios</div>
+      <div class="detail">Toma decisiones reales</div>
+    </div>
+  </div>
+  
+  <div class="section">🏺 Cultura Ñuu Savi</div>
+  <div class="grid">
+    <div class="card" onclick="alert('Glifos Mixtecos')">
+      <span class="icon">🏺</span>
+      <div class="name">Glifos Mixtecos</div>
+      <div class="detail">Signos del calendario</div>
+    </div>
+    <div class="card" onclick="alert('Leyendas')">
+      <span class="icon">👻</span>
+      <div class="name">Leyendas</div>
+      <div class="detail">Historias ancestrales</div>
+    </div>
+    <div class="card" onclick="alert('Códice')">
+      <span class="icon">📖</span>
+      <div class="name">Códice Viviente</div>
+      <div class="detail">Historia en glifos</div>
+    </div>
+    <div class="card" onclick="alert('Personajes')">
+      <span class="icon">👤</span>
+      <div class="name">Personajes</div>
+      <div class="detail">Héroes de Tlaxiaco</div>
+    </div>
+  </div>
+  
+  <div class="section">🎮 Juegos Interactivos</div>
+  <div class="grid">
+    <div class="card" onclick="alert('Memory')">
+      <span class="icon">🧠</span>
+      <div class="name">Memory de Valores</div>
+      <div class="detail">Empareja los símbolos</div>
+    </div>
+    <div class="card" onclick="alert('Descifra Glifos')">
+      <span class="icon">✨</span>
+      <div class="name">Descifra Glifos</div>
+      <div class="detail">Arrastra al significado</div>
+    </div>
+  </div>
+  
+  <!-- Glifos educativos -->
+  <div class="section">📖 Aprende los Glifos</div>
+  <div class="glyph-demo">
+    <div class="glyph-item"><span class="ico">🦅</span><span class="lbl">Cuauhtli</span><span class="meaning">Águila — Rey</span></div>
+    <div class="glyph-item"><span class="ico">🐆</span><span class="lbl">Ocelotl</span><span class="meaning">Jaguar — Guerrero</span></div>
+    <div class="glyph-item"><span class="ico">🌧️</span><span class="lbl">Quiaviz</span><span class="meaning">Lluvia — Ñuu Savi</span></div>
+    <div class="glyph-item"><span class="ico">🌽</span><span class="lbl">Cintli</span><span class="meaning">Maíz — Alimento</span></div>
+    <div class="glyph-item"><span class="ico">🌸</span><span class="lbl">Xóchitl</span><span class="meaning">Flor — Belleza</span></div>
+    <div class="glyph-item"><span class="ico">⛰️</span><span class="lbl">Tepec</span><span class="meaning">Cerro — Sacred</span></div>
+    <div class="glyph-item"><span class="ico">🐒</span><span class="lbl">Ozomatli</span><span class="meaning">Mono — Danza</span></div>
+    <div class="glyph-item"><span class="ico">🦌</span><span class="lbl">Mazatl</span><span class="meaning">Venado — Velocidad</span></div>
+  </div>
+  
+  <button class="btn" style="background:transparent;border:3px solid #C25B28;color:#C25B28;margin-top:12px" onclick="showScreen('home')">← Volver</button>
+  
+  <div class="greca" style="margin-top:12px"></div>
+</div>
+
+<script>
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on')});
+  document.getElementById(id).classList.add('on');
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
